@@ -1,0 +1,904 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>“滴滴村”：喧嚣不再，前路未卜</title>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/aos.css"/>
+<link href="css/timeline.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/skippr.css">
+<link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	height: 100%;
+}
+body, div, video {
+	padding: 0;
+	margin: 0;
+}
+/* carousel */
+
+.slider {
+	position: relative;
+	top: -30px;
+	right: 50px;
+	float: right;
+	margin-bottom: 0px;
+	height: 250px;
+	width: 450px;
+	overflow: hidden;
+}
+.carousel h2 a {
+	color: #fff;
+}
+.carousel .backgrounds {
+	height: 340px;
+}
+.carousel .backgrounds .item {
+	width: 550px;
+	height: 350px;
+	float: left;
+	position: relative;
+	z-index: 1;
+}
+.carousel .backgrounds .item_1 {
+	background: url(images/carousel_bg_arrow.jpg) no-repeat 0 0;
+}
+.carousel .backgrounds .item_2 {
+	background: url(images/carousel_bg_arrow.jpg) no-repeat 0 0;
+}
+.carousel .backgrounds .item_3 {
+	background: url(images/carousel_bg_1.jpg) no-repeat 0 0;
+}
+.carousel .panel {
+	background: #000;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 30px;
+	width: 550px;
+	z-index: 10;
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+.carousel .panel .paging {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 550px;
+	height: 30px;
+	text-align: center;
+	z-index: 50;
+	overflow: visible;
+}
+.carousel .panel .paging a {
+	color: #000;
+	font-size: 1.1em;
+}
+.carousel .panel .pause {
+	position: absolute;
+	right: 20px;
+	top: 25px;
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url(images/carousel_pause_bg.gif) no-repeat 0 0;
+	text-indent: -6000px;
+}
+.carousel .panel .play {
+	position: absolute;
+	right: 20px;
+	top: 25px;
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url(images/carousel_play_bg.gif) no-repeat 0 0;
+	text-indent: -6000px;
+}
+.carousel .panel .paging .next {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url(images/carousel_next_bg.gif) no-repeat 0 0;
+	text-indent: -6000px;
+}
+.carousel .panel .paging .previous {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url(images/carousel_previous_bg.gif) no-repeat 0 0;
+	text-indent: -6000px;
+}
+.carousel .panel .paging #numbers a {
+	padding: 0 5px 0 5px;
+	height: 30px;
+}
+.carousel .panel .paging #numbers a.selected {
+	color: #fff;
+}
+.carousel .panel .details_wrapper {
+	position: absolute;
+	top: 31px;
+	left: 1px;
+	width: 225px;
+	overflow: hidden;
+	height: 200px;
+}
+.carousel .panel .details_wrapper .details {
+	height: 20px;
+}
+.carousel .panel .details_wrapper .details .detail {
+	width: 225px;
+	height: 200px;
+	float: left;
+}
+.carousel .panel .details_wrapper .details h2 {
+	font-size: 1.9em;
+	line-height: 1.2em;
+	margin: 0 0 5px 0;
+}
+.carousel .panel .details_wrapper .details a.more {
+	color: #fff;
+	font-size: 1.1em;
+}
+/*carousel结束*/
+#top {
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+#top video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	z-index: -9;
+}
+.caption {
+	position: absolute;
+	width: 40%;
+	color: #FFF;
+	top: 20%;
+	left: 5%;
+	text-align: center;
+	opacity: 0;
+	z-index: 999;
+	transform: translateY(20px);
+	-webkit-transform: translateY(20px);
+	transition: all 6s linear;
+	-webkit-transition: all 6s linear;
+}
+.caption h2 {
+	font-family: "华文细黑", "宋体";
+}
+.caption h1 {
+	font-family: "微软雅黑", "宋体";
+}
+.caption-ani {
+	opacity: 1;
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+}
+.line {
+	width: 0;
+	height: 1px;
+	background-color: #FFF;
+	transition: all 0.5s linear 1s;
+	-webkit-transition: all 0.5s linear 1s;
+}
+.line-ani {
+	width: 100%;
+}
+@font-face {
+	font-family: fzltkh;
+	src: url(css/fzltkh.TTF)
+}
+@font-face {
+	font-family: lth;
+	src: url(css/lth.TTF)
+}
+#top1 {
+	height: 100%;
+	background-image: url(image/top1.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+#top2 {
+	height: 100%;
+	background-image: url(image/top2.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+#top3 {
+	height: 100%;
+	background-image: url(image/top3.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+.nav ul {
+	margin: 0px auto 0px auto;
+	list-style: none;
+}
+.nav {
+	width: 100%;
+	height: 40px;
+	background-color: rgba(0,0,0,0.6);
+	clear: both;
+	position: fixed;
+	z-index: 999;
+}
+.nav ul {
+	margin: 0 auto;
+	z-index: 999;
+}
+.nav ul li a:link {
+	display: block;
+	float: left;
+	width: 25%;
+	color: #0FF;
+	text-decoration: none;
+	color: #FFF;
+	text-align: center;
+	line-height: 2.5em;
+	font-size: 18px;
+	margin: 0 auto;
+	z-index: 999;
+}
+.nav ul li a:visited {
+	color: #FFF;
+}
+.tm {
+	font: 18px/1.6em "lth", "黑体", "微软雅黑";
+	margin-left: 50px;
+	margin-top: 150px;
+	padding-bottom: 8px;
+	padding-top: 49px;
+	border-bottom: solid 2px #666666;
+	width: 15%;
+	position: relative;
+	top: 50px;
+	text-align: right;
+	color: #000;
+}
+.part {
+	width: 100%;
+}
+.part:after {
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+.content {
+	width: 36%;
+	float: left;
+	margin-left: 20%;
+}
+.content p {
+	padding: 10px;
+	font: 10px/2em "fzltkh", "黑体", "微软雅黑";
+	letter-spacing: 1px;
+	color: #000;
+}
+.jq22-container {
+	width: 32%;
+	float: right;
+	z-index: 999;
+	margin: 0px 200px 0px 0px;
+}
+#chart {
+	height: 280px;
+	width: 460px;
+	text-align: center;
+	font-size: 16px;
+	font-style: oblique;
+	z-index: 99;
+	float: right;
+	margin-right: 80px;
+	margin-top: 280px;
+	margin-bottom: 115px;
+}
+.gifgroup {
+	margin-right: 30px;
+	float: right;
+}
+.gifs {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 100px;
+}
+.zhengce {
+	float: left;
+	height: 450px;
+	width: 600px;
+	background-image: url(image/diannao.jpg);
+	margin-top: 200px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
+.zhengceshuoming {
+	width: 500px;
+	height: 210px;
+	overflow: scroll;
+	margin-top: 95px;
+	margin-left: 60px;
+}
+.part2vid {
+	float: right;
+	width: 30%;
+	margin-top: 580px;
+	margin-bottom: 250px;
+	padding: 0;
+	z-index: 0;
+}
+.part3vid {
+	float: right;
+	width: 30%;
+	margin-top: 110px;
+	margin-bottom: 10px;
+	padding: 0;
+	z-index: 0;
+	margin-right: 50px;
+	margin-left: 0px;
+}
+.contentyi {
+	float: left;
+	width: 100%;
+	margin-right: 0;
+	padding: 0;
+	margin-bottom: 180px;
+}
+.contentyi p {
+	width: 37%;
+	margin-left: 20%;
+	margin-right: 0;
+	margin-bottom: 0;
+	padding: 10px;
+	font: 10px/2em "fzltkh", "黑体", "微软雅黑";
+	letter-spacing: 1px;
+	color: #000;
+}
+.figure {
+	position: relative;
+	float: right;
+}
+.plus {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -19px 0 0 -19px;
+	opacity: 0.7;
+	cursor: pointer;
+}
+/*lightbox*/
+.lightbox {
+	float: left;
+	margin-top: 50px;
+	margin-bottom: 350px;
+}
+#lightbox_mask {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .7);
+}
+#lightbox_popup {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#lightbox_popup .pic-view {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+	text-align: center;
+}
+#lightbox_popup .pic-view .pic {
+	max-width: 100%;
+	max-height: 100%;
+	border: 5px solid #fff;
+	border-radius: 3px;
+}
+#lightbox_popup .btn-view {
+}
+#lightbox_popup .btn-view .btn {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 24px;
+	text-decoration: none;
+	border-radius: 32px;
+	background-color: #000;
+	opacity: .4;
+	color: #fff;
+	transition: all .3s;
+}
+#lightbox_popup .btn-view .btn:hover {
+	opacity: 1;
+	transform: scale(1.4);
+}
+#lightbox_popup .btn-view .btn-prev {
+	left: 10px;
+	top: 48%;
+}
+#lightbox_popup .btn-view .btn-next {
+	right: 10px;
+	top: 48%;
+}
+#lightbox_popup .btn-view .btn-close {
+	right: 10px;
+	top: 10px;
+}
+#lightbox_popup .caption-view {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 38px;
+	background-color: rgba(0, 0, 0, .7);
+	text-align: center;
+}
+#lightbox_popup .caption-view p {
+	line-height: 38px;
+	color: #fff;
+}
+.lightbox-pic {
+	width: 150px;
+}
+/*lightbox结束*/
+#slider-wrap {
+	width: 480px;
+	height: 270px;
+	margin: 10px;
+	position: relative;
+	float: right;
+	margin-right: 10px;
+	margin-left: 50px;
+	z-index: 1;
+}
+.sl {
+	width: 250px;
+	height: 145px;
+	float: left;
+	margin: 2px;
+}
+.sl2 {
+	width: 250px;
+	height: 145px;
+	float: left;
+	margin: 2px;
+}
+.hz {
+	width: 508px;
+	float: right;
+	margin-right: 300px;
+	margin-left: 30px;
+}
+</style>
+</head>
+<body>
+<div id="header" class="header">
+  <div id="nav" class="nav clearfix">
+    <ul>
+      <li><a href="#content1" class="smooth">滴滴村</a></li>
+      <li><a href=".content2" class="smooth">“棒棒”的落脚地</a></li>
+      <li><a href=".content3" class="smooth">黄金时代</a></li>
+      <li><a href=".content4" class="smooth">喧嚣之后</a></li>
+    </ul>
+  </div>
+</div>
+<!--nav结束-->
+
+<div id="top">
+  <video id="videobg" autoplay loop>
+    <source src="video/top.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="tm" id="content1" data-aos="fade-up">
+  <p>&ldquo;滴滴村&rdquo;</p>
+  <p>喧嚣不再，前路未卜</p>
+</div>
+<!--tm结束-->
+<div class="part">
+  <div data-aos="fade-up"class="contentyi">
+    <p>在2016年7月20日之前，和大多数京郊村庄一样，位于北京市海淀区西北方向，远在北五环外的村庄旁的后厂村，对大多数北京市民来说都是闻所未闻的 。 </p>
+    <p>那一天，北京天降暴雨，全城道路拥堵。与后厂村一路之隔的后厂村路也不例外。不同寻常的是，东西走向的后厂村路沿线分布着包括百度、新浪、网易、滴滴、联想、亚信在内的多家知名互联网公司。对于很多互联网行业从业人士而言，后厂村路是他们上下班的必经之路。 </p>
+    <img src="image/duibi(6).png"  width=32% height=32% style="float:right; margin-right:360px"/>
+    <p>当天，他们中的不少人也因为暴雨而被困在了路上，短短4公里的路程，有的人甚至开了70多分钟的车才走完。在车上，百无聊赖的员工们们用社交网络一遍又一遍地刷着&ldquo;后厂村&rdquo;&ldquo;拥堵&rdquo;等关键词。</p>
+    <p>在后来媒体对那次暴雨的报道中，腾讯科技的编辑将后厂村路戏称为&ldquo;制约中国互联网未来10年发展最大的瓶颈&rdquo;。因为大量员工的迟到或多或少地耽误了后厂村周边为数众多的互联网巨头企业的日常运营。 </p>
+    <p>相比之下，被巨头们包围着的后厂村却更多地只是作为一个路名而存在着，显得低调了不少。但事实上，后厂村的另一个名字却早已闻名遐迩——&ldquo;滴滴村&rdquo; </p>
+    <p>说是村子，但是来访的客人却很难将后厂村与印象中的乡村田园风光联系起来。东面是2016年新建的联想北京总部，西临万科地产新开发的高档小区如园，后厂村这片用砖石和集装箱房搭起的棚户区显得格外格格不入。村子傍着南北走向的西北旺二街而建，沿街随处可见各式各样的小轿车和小货车，挤满了整条主干道。虽然是在北京，但令人奇怪的是大多数车都是外地牌照，其中以&ldquo;渝H&rdquo;打头的占大多数，这是这些品牌型号都异常杂乱的小轿车少有的共同点，对每一个来客释放着这样的信息——这里的居民不能算是&ldquo;当地人&rdquo;。 </p>
+    <p>而这也正是&ldquo;滴滴村&rdquo;之所以声名在外的原因。作为北京最大的外地司机聚居地，后厂村中驻扎着上千名来自外地的网约车司机，其中大多数都是滴滴司机。在网约车行业发展最快的那几年间，从后厂村发车的师傅们每天能跑下上万单生意。所谓&ldquo;滴滴村&rdquo;，可谓名副其实。</p>
+    <div class="slider" data-aos="fade-up">
+      <div id="theTarget" >
+        <div style="background-image: url(image/part1-1.jpg)"></div>
+        <div style="background-image: url(image/part2-10.JPG)"></div>
+        <div style="background-image: url(image/part2-6.JPG)"></div>
+        <div style="background-image: url(image/part2-5.JPG)"></div>
+        <div style="background-image: url(image/part2-8.jpg)"></div>
+        <div style="background-image: url(image/part2-7.JPG)"></div>
+      </div>
+    </div>
+    <!--carousel结束-->
+    <p>&ldquo;滴滴村&rdquo;再次成为人们关注的焦点，是在2017年的清明节前后。</p>
+    <p>3月20日，司机师傅们陆陆续续地在自己的滴滴打车软件司机端收到了这样一条通知：&ldquo;根据北京交通主管部门要求，明日起，我们将逐步停止对北京三环内非京牌网约车派单。&rdquo;4月1日，非京牌网约车派单被彻底停止。到了5月20日，北京市网约车新政过渡期正式结束，这意味着外地牌照车以及非京籍司机从当天起将不得在京从事网约车的运营。 </p>
+    <p>没有人知道，到下一个五月，还会有多少人记得&ldquo;滴滴村&rdquo;这个曾经响亮的名字。 </p>
+  </div>
+  <!--part结束--> 
+</div>
+<!--content结束-->
+
+<div id="top1" class="content2"> </div>
+<div class="tm" data-aos="fade-up">
+  <p>“棒棒的落脚地”</p>
+</div>
+<!--tm结束-->
+<div class="part">
+  <div class="contentyi"  data-aos="fade-up">
+    <p>事实上，早在以滴滴、UBER为代表的网约车软件流行起来之前，后厂村就已经是大量外来司机在北京的落脚地了。村中停放着大量的&ldquo;渝H&rdquo;牌照汽车，这个牌照的属地位于重庆市的彭水县，与之相呼应的，是村中随处可以听见的重庆口音。 </p>
+    <p>对川渝方言有所了解的人对&ldquo;棒棒&rdquo;这个词一定不会陌生，它专指那些常年扛着竹担替人搬运行李货物的体力劳动者。在快递行业兴起之前，&ldquo;棒棒&rdquo;们在重庆这座道路复杂，地形崎岖的山城里承担起了重要的物流任务。 </p>
+    <img src="image/car.gif" width="23%" height="23%" style="float:right; margin-right:7%"/>
+    <p>如今,挑着竹担的&ldquo;棒棒&rdquo;工越来越少见了，但是在全国各地的物流和运输行业里，依然随处可见来自重庆的务工人员的身影。自上世纪90年代开始，以搬家为主业的彭水司机就渐渐在北京多了起来，以至于在北京出现了这么一种说法：&ldquo;十个搬家工里，有八个是重庆人。&rdquo; </p>
+    <p>很少有后厂村的村民说得清，为什么这些外地司机会选择把后厂村作为他们来到北京后的聚居地。这里的村民流动性太大，老师傅们往往待不了几年，就又换一座城市打拼，年轻的后生们又从千里之外的家乡赶来，涌入这片拥挤的小社区。 </p>
+    <p>41岁的丁师傅算是后厂村司机师傅中的的老居民了，2003年他在老乡的介绍下从重庆老家自己开车来到北京干起了搬家工。从那之后，他就一直在后厂村定居，谈到自己在后厂村的资历，丁师傅显得颇有底气：&ldquo;我在这里住了起码有十几年了。&rdquo; </p>
+    <p>刚到北京的时候，丁师傅和大多数同乡一样，以搬家为主业。通过帮搬家公司开车，他顺利地捞到了来到北京后的第一桶金，随后也是在北京，他结识了同样来自重庆的妻子，成家后诞下了一儿一女，组建了自己的家庭。</p>
+    <p>依托着同乡介绍，一批又一批像丁师傅一样的年轻人远离家乡，涌入后厂村，来到北京闯荡。村民们曾经统计过，至少有1000名来自重庆彭水县的司机师傅和搬家工人居住在后厂村，停靠在后厂村的用于搬家的小型货车和面包车更是一度超过500辆。而他们当中的大多数人来到北京的契机也都是“同乡介绍”。谈到当年的盛况，丁师傅认为，仅仅后厂村一个村落，就占据了北京搬家市场的&ldquo;半壁江山&rdquo;。</p>
+    <div class="jq22-container">
+      <div class="jq22-content">
+        <ul class="cards-split">
+          <li class="card card-1"><img src="image/part2-1.jpg" width="400" height="250" />
+            <div class="content" style="width:100px;">
+              <h2>垃圾站</h2>
+            </div>
+          </li>
+          <li class="card card-2"><img src="image/part2-2.jpg" width="400" height="250" />
+            <div class="content" style="width:100px;">
+              <h2>大杂院</h2>
+            </div>
+          </li>
+          <li class="card card-3"><img src="image/part2-3.jpg" width="400" height="250" />
+            <div class="content" style="width:100px;">
+              <h2>小商店</h2>
+            </div>
+          </li>
+        </ul>
+        <hr/>
+      </div>
+      <!--jq22-content结束--> 
+    </div>
+    <!--jq22-container结束-->
+    <p>然而好景不长，大量外地新人加入搬家行业，也意味着市场上可供分配的空间越来越少。2009年前后，丁师傅愈发感受到了搬家行业的两极分化：有的人几个月之内就挣到了近百万元，从此成功在北京安家落户，但更多像他一样的普通司机则是几天接不到一单好活儿，大伙儿所属的搬家公司甚至开始拖欠正常工资了。 </p>
+    <p>同时，数年来从事搬家这个行当的辛劳也使得丁师傅日渐萌生退意。相比于正常的载客和运货，搬家往往挣得更多，但也要辛苦得多。 </p>
+    <p>每次接到了活儿，丁师傅都是自己一个人开车，自己一个人帮客人装货卸货。有时候来了大单子，还得跑上数百公里的长途，伴随着不菲的报酬的，也有未知的风险。 </p>
+    <p>丁师傅至今还记得，在&ldquo;转行&rdquo;之前，他跑过一单从北京到长春的搬家生意。四月份的北京，正是宜人的春天，但出了山海关之后，东北大地上寒冷的空气便冻得丁师傅直打寒战，衣着单薄的他很快就有了感冒的症状。路上，他还因为东北和北京不同的交规而被交警罚了700块钱。严寒的天气下，丁师傅在车上备着的水结冰了，用来充饥的苹果也冻得难以下嘴。来回2200公里的寒冷路程，又饿又渴的丁师傅最终硬是一个人开了下来。</p>
+    <p>整个行业的不景气以及格外的辛苦使得丁师傅最终决定退出，2009年当年，他卖掉了自己原先搬家用的货车，购置了一辆二手别克，开始专职跑起了人们俗称的&ldquo;黑车&rdquo;生意。</p>
+    <p>尽管跑&ldquo;黑车&rdquo;看起来要比搬家轻松不少，但是与正常的搬家生意相比，&ldquo;黑车&rdquo;终究是非法营运，&ldquo;黑车&rdquo;司机每天都像是在陪交警玩着猫捉老鼠的游戏，一旦被抓到，巨额罚款所带来的经济损失足够这些司机&ldquo;脱一层皮&rdquo;。丁师傅也被交警抓到过不少次，最多的一次不仅被罚了6000元，还被没收了车。 </p>
+    <p>黑车行业没有监管，也没有计价规则可言，司机宰客也是黑车生意中的常态，对此丁师傅也坦言：&ldquo;所以说，你要是拉黑活他找谁去呀，拉完乘客找不着司机，司机被罚了也没话说，但是你要真把乘客坑了乘客能找谁去啊？&rdquo; </p>
+    <div class="hz" data-aos="fade-left">
+      <div class="sl"> <a href="image/home1.jpg" data-fancybox="group1">
+        <div> <img src="image/home1.jpg" width="250" height="145"/> </div>
+        </a> </div>
+      <div class="sl"> <a href="image/home2.jpg" data-fancybox="group1">
+        <div> <img src="image/home2.jpg" width="250" height="145"/> </div>
+        </a> </div>
+      <div class="sl2"> <a href="image/home3.jpg" data-fancybox="group1">
+        <div> <img src="image/home3.jpg" width="250" height="155" /> </div>
+        </a> </div>
+      <div class="sl2"> <a href="image/home4.jpg" data-fancybox="group1">
+        <div> <img src="image/home4.jpg" width="250" height="155" /> </div>
+        </a> </div>
+      <a href="image/duibi-4.jpg" data-fancybox="group1"></a> <a href="image/part1-7.jpg" data-fancybox="group1"></a> <a href="image/part1-6.jpg" data-fancybox="group1"></a> <a href="image/part1-12.jpg" data-fancybox="group1"></a> <a href="image/part1-4.jpg" data-fancybox="group1"></a> </div>
+    <p>&ldquo;但是人做事我们不能那么干。&rdquo;尽管丁师傅并不否认自己在跑黑车的时候漫天要价，但是他也有自己的坚守。 </p>
+    <p>一次，他在一家KTV拉了一位酒气熏天的乘客，下车的时候，迷迷糊糊的乘客把一捆封条还没拆的人民币一万元整和手机硬塞给了丁师傅就要走。丁师傅不愿意收，硬拉着乘客在楼下等着。等到半个小时后乘客的妻子来接他的时候，那位醉汉已经吐得丁师傅满车都是。 </p>
+    <p>最终，丁师傅帮着把那位乘客背上了楼，把钱和手机尽数还给了乘客的妻子，让她点清钱数，看钱是不是少了。乘客的妻子对丁师傅千恩万谢，丁师傅摆了摆手，便驾车离开了。 </p>
+    <p>&ldquo;我不可能拿他的钱的，&rdquo; 说到这儿，丁师傅憨憨地笑了，&ldquo;我这人虽然没钱，但是我干不出这样的事。&rdquo; </p>
+    <p>&ldquo;提心吊胆&rdquo;的日子过了六年，这六年间，丁师傅一度在街上一边游荡拉活，一边环顾四周，注意着交警的动向，心里犹豫着&ldquo;要不要继续开黑车&rdquo;。此时的他还不知道，转机即将在2015年的夏天来临。 </p>
+  </div>
+  <!--content结束--> 
+  
+</div>
+<!--part结束-->
+
+<div id="top2"  class="content3"> </div>
+<div class="tm" data-aos="fade-up">
+  <p>黄金时代</p>
+</div>
+<!--tm结束-->
+<div class="part" data-aos="fade-up" >
+  <div class="content" >
+    <p>2015年5月，滴滴快车APP正式上线，短短两个月的时间里，北京市的注册滴滴司机数量便逼近70万人，局部地区的峰值订单量更是达到了惊人的40万单。6月份，丁师傅在朋友的介绍下注册成为了一名滴滴快车司机。做了两天滴滴司机之后，他做出了决定：再也不开黑车了。 </p>
+    <p align="left">&ldquo;出自于我自己的良心上说还是跑滴滴比较放心一点&rdquo;谈到最终决定放弃黑车，做一名滴滴司机的原因时，丁师傅再三提到&ldquo;放心&rdquo;这个关键词，&ldquo;跑滴滴，你自己放心，乘客对你也放心。你要跑黑车，出了安全事故，你找不到任何人，你查也查不到，要是出自于良心上来说，你觉得这好吗？&rdquo; </p>
+    <p align="left">另外，不仅仅是相对安全放心的工作环境和机制，上线初期的滴滴最大的优势还是在于——它确确实实能挣到钱，而且是很多钱。 </p>
+    <p align="left">丁师傅替我们算了一笔账，他成为滴滴司机之后，每一单的收入主要包括三个部分：每一笔订单的提成、订单完成的奖励金、高峰时段的加价收入。其中，丁师傅的大部分收入都来源于后两者，高峰时段加价收入自不必说，在交通高峰期完成的订单，滴滴会为司机提供最高达到订单本身金额6倍的补贴金。而奖励金则是滴滴快车平台在创立初期为了保留能够长期服务的快车司机而设立的奖励政策。&ldquo;一天跑10单奖励100元，跑20单奖励200元。&rdquo; </p>
+    <p align="left">依仗着滴滴初运营期间平台对司机的大力补贴，丁师傅很快就发了一笔小财，在那个6月，一天仅仅出车10个小时，他便能赚到1000元，对于丁师傅来说，这在开黑车的时候是&ldquo;想都不敢想的&rdquo;，那时候的他不仅没有稳定收入，还得&ldquo;一边忙着跟乘客讨价还价，一边东张西望瞅着有没有交警。&rdquo; </p>
+    <p align="left">看着像丁师傅这样的老司机转行滴滴后&ldquo;挣了大钱&rdquo;，他的不少老乡们也蠢蠢欲动了起来，他们纷纷来找丁师傅打听这样的问题：该怎么注册成为滴滴司机，干滴滴一天能挣多少，都有什么补贴政策。一时间，后厂村内原本停放着用来搬家运货的面包车和皮卡数量锐减，取而代之的是一辆又一辆符合滴滴快车要求的小轿车：越来越多的师傅们开始加入了滴滴司机的行列。 </p>
+    <p align="left">同样来自重庆的庹师傅也在这个时候在朋友的劝说下来到北京，成为了一名滴滴快车司机。他花12万元买了一辆新车，开始了在北京打拼的生活。据他回忆，生意最火爆的那几个月里，当他跑完一天的单子回到村子里的时候，&ldquo;总是找不到停车位&rdquo;，因为村里的路上几乎停满了住在后厂村的滴滴司机的轿车。 </p>
+    <p align="left">来北京干起滴滴司机之后，庹师傅一个月的收入接近一万元，这让他开始把自己快车司机的身份当成了一份正式的工作。为了干好这份工作，他甚至专门去买了一部新手机，因为&ldquo;这部手机定位更准，网速更快，找乘客的时候更方便&rdquo;。 </p>
+    <p align="left">同庹师傅不同，住在最早尝鲜&ldquo;滴滴司机&rdquo;的丁师傅对面的任师傅并没有立即跟风加入丁师傅们的行列，他观望了半年左右的光景，到了2016年春节后才终于下定决心，花了10万多元购置了一辆新车，在滴滴快车APP上接起了单子，开始了&ldquo;月入最基本一万，干得狠得一个月能挣三万&rdquo;的生活。当时，仅在丁师傅和任师傅居住的胡同周围，就有接近一百名滴滴司机。 </p>
+    <p align="left">然而，在这一片繁荣的背后，则是滴滴、快的、优步、易道等网约车巨头们为了争夺市场而发起的一次又一次价格战，仅在2015年一年间，中国的各家网约车公司就因为在价格战中打出的补贴而烧掉了超过200亿元人民币。 到了2016年年初，这种价格战依然热度不减。</p>
+    <p>“从3月4日开始，成都用户每天可享受3次6.6折优惠;上海用户则为全部出行7折;南京用户每单接单后立减7元;苏州用户在使用滴滴快车接单成功后，会自动获取一张6折的滴滴快车优惠券，每天最多可以获得3次”， “大连和长春乘客一周有3次最低至6.6折和7折的出行机会;西安用户在当日使用滴滴快车首单完成支付后会同时获取5折和8折的滴滴快车优惠券;杭州用户每天7折限两单;宁波每日首单6折;嘉兴、绍兴、湖州、金华每日首单6.5折。此外，滴滴快车还在上百个三四线城市同时启动免起步价等优惠活动，优惠力度从6元至15元不等”。 </p>
+    <p>　　巧合的是，uber在三月初也悄然推出了补贴活动。以广州地区为例，uber发出的信息显示，人民优步广州地区的起步将降至6.8元，拼车出行已经降到3.4元，广州全城享有7.5折优惠。</p>
+    <p align="left">烧钱烧出来的繁荣，注定不会长久。 </p>
+    <p align="left">在滴滴与快的合并，滴滴收购优步中国这两件中国网约车市场的重磅新闻过去之后，师傅们明显感觉到&ldquo;钱不好挣了&rdquo;。平台提供的补贴明显少了，奖励政策也发生了变化。丁师傅发现，完成订单的奖励金标准变成了一天接20单才能得到100元的奖励。 </p>
+    <p align="left">渐渐地，师傅们的收入从每日最多能挣1000元下降到了300元，有时运气不好，刨去油费之后也就只能挣到100元。丁师傅每月的收入更是少了将近两三千元。</p>
+    <p align="left">在这样的压力下，越来越多的司机开始靠着增加每天跑车的时间来维持收入。像任师傅这样入行晚的为了能尽快回本，往往一天会在外没日没夜地跑上17到18个小时。 </p>
+    <p align="left">伴随着日渐加重的生活压力而来的还有流言蜚语，由于过去常和交警打交道，后厂村里的一些师傅结交上了运管处的朋友。从2016年初，就有人开始在滴滴司机间放出消息——&ldquo;国家要出政策管理我们了&rdquo;。 </p>
+    <p align="left">大多数司机师傅都对这样的言论半信半疑，他们中的大多数人都是家中唯一的收入来源，每天出车赚钱养家，就已经足够劳心费神了，哪还有空在乎这么一个没有什么根据的谣言呢？</p>
+  </div>
+  <!--content结束-->
+  <div id="chart" data-aos="fade-up"> </div>
+  <!--chart结束-->
+  <div class="gifgroup">
+    <div class="gifs"><img src="image/gif1.gif" height="150" /></div>
+    <div class="gifs"><img src="image/gif2.gif" height="120" /></div>
+    <div class="gifs"><img src="image/gif3.gif" height="110"/></div>
+  </div>
+  <!--gifgroup结束-->
+  <div class="part2vid"  data-aos="fade-right">
+    <video controls="controls" src="video/part2.mp4" width="500" height="450" style="float:right; margin-right:50px"></video>
+  </div>
+  <!--part2vid结束--> 
+</div>
+<!--part结束-->
+
+<div id="top3" class="content4" > </div>
+<div data-aos="fade-up" class="tm">
+  <p>喧嚣之后</p>
+</div>
+<!--tm结束-->
+<div class="part">
+  <div class="content" data-aos="fade-up">
+    <p align="left">谣言应验的那一天终究还是来临了。</p>
+    <p>2016年12月，北京市交通委等部门联合发布了《北京市网络预约出租汽车经营服务管理实施细则》，细则中对北京的网约车司机做出了明确的要求——“京人开京车”。 </p>
+    <p>2017年4月1日，非京牌的网约车派单被各家网约车平台彻底终止。 </p>
+    <p>2017年5月20日，网约车新政过渡期正式结束，外地牌照车以及非京籍司机从当天起不得在京从事网约车的运营。</p>
+    <p>根据北京市交通委的官方解读，设置户籍门槛有四个原因，一是要符合北京发展定位。二是治理“城市病”、疏解非首都功能的要求，而北京“城市病”的主要原因之一是人口无序过快增长。三是治理交通拥堵的要求。四是根据政策要求，北京要适度发展网约车。</p>
+    <p align="left">如今，任师傅已经退出了这个行业，庹师傅则对多家企业的驾驶员岗位投出了简历，但至今仍没有一家企业给他回复，丁师傅凭着多年的关系弄到了北京牌照，继续接单，但是滴滴也已不再是他的主业。与往日不同，现在的他又回到了提心吊胆地在外开车接客的日子。原因很简单，朋友能帮他解决京牌的问题，却无论如何都不可能帮他弄到一份北京户口。 </p>
+    <p align="left">短短几个月时间，后厂村里滴滴司机的规模便由盛转衰。今天在丁师傅居住的那条胡同里，只有他还会偶尔跑跑滴滴，其他的司机师傅们，不是重新干起了老本行，就是在家待业，每天在树荫下搓麻将度日，还有的则直接回了重庆老家。曾经声名在外的&ldquo;滴滴村&rdquo;，就这样寂静了下来。 </p>
+    <p align="left">往日小轿车从后厂村进进出出的盛况也是许久不见了，现在村民们用的最多的交通工具是今年才火起来的共享单车，村子里四通八达的小巷里随处都堆放着用坏了的和上了私锁的ofo单车。村子旁的西北旺二街上，大多数牌照&ldquo;渝H&rdquo;打头的小汽车已经许久没有人动过了，车窗上落满了灰尘。街的另一边，正在新建的楼盘工地上，施工车辆进进出出，引擎轰鸣声震天，而后厂村中只有偶尔传出来的犬吠声与之呼应。由于不少居民重新拾起了搬家的生意，面包车和小货车的身影在后厂村也渐渐多了起来。 </p>
+    <p align="left">早在2001年，后厂村及其周边村落的拆迁计划就被提上了西北旺社区的日程。十几年过去了，在其他村子的原址上已经兴建起了一座又一座现代化的居民楼，以及上文提到过的百度、联想等互联网巨头的公司大楼，万科地产在西北旺新建的高档小区如园的均价已经达到了96000元每平方米。在高档小区和高新企业的包围下，后厂村这一小片垃圾遍地、污水横流的棚户区显得格外扎眼。 </p>
+    <p align="left">　&ldquo;我们不能让城市这边高楼大厦，那边棚户连片;这边霓虹闪烁，那边连基本的生活条件都不具备。&rdquo;在2015年的一次国务院常务会议上，李克强总理曾经这样说道，&ldquo;中国还有1亿多人生活在棚户区，如果棚户区问题不解决，我们何谈社会公平?&rdquo;</p>
+    <p align="left">目前的西北旺社区这种尴尬的情况，与后厂村的特殊性是分不开的。后厂村的居民大多数是外来人口，其中有不少已经租住多年，如果拆了后厂村，这些拿不到拆迁补偿款的外来务工人员他们又该去哪里呢？ </p>
+    <p align="left">丁师傅就是这样的居民的代表，他们一家四口已经在后厂村居住了十多年，一双儿女更是从小在后厂村长大，但是他们依然是外地户口，无论在住房还是教育上都享受不到本地居民的优惠。</p>
+    <p align="left">如今丁师傅一家最大的困难便是孩子的教育问题，正在上小学的一儿一女，一学期的学费高达两万元。而丁师傅又恰好因为乘客的投诉，导致开滴滴挣来的数千元被滴滴公司冻结在账户里，无法提取。他与公司交涉了数周，问题依然没有得到解决。我们到丁师傅家采访的时候，他还在心急火燎地给滴滴的客服打电话，询问自己什么时候能取出账户里的资金——他需要这笔钱给孩子交学费。 </p>
+    <p align="left">公司和乘客两头不讨好，这就是目前丁师傅这样的外地滴滴司机所面临的窘境。 </p>
+    <p align="left">丁师傅打电话的时候，他的儿子和女儿似乎完全看不见爸爸眉头间的阵阵愁云，依然抢着要爸爸的手机玩。哥哥想要玩最近火热的手游《王者荣耀》，妹妹则想拿爸爸的手机看动画片。他们的妈妈试着拦住他们不要打扰爸爸打电话，满脸都是无奈的笑容。 </p>
+    <p align="left">几里地外，2016年底刚落成的北京地铁16号线西北旺站是北京市最新、设施最完善的地铁站之一。作为最年轻的地铁线路，16号线甚至还拥有自己的吉祥物&ldquo;石榴君&rdquo;。在西北旺站出口处扶梯旁的墙上，可爱的&ldquo;石榴君&rdquo;卡通形象开心地对来往的路人摆着手，在他的身边写着一行大字：&ldquo;Hello,后厂村&rdquo;。</p>
+    <p align="left">人来人往，车来车去，十多年间，寄居着上万外来务工人员的后厂村见证了太多的更迭。&ldquo;滴滴村&rdquo;终究会成为历史，后厂村和它的居民们的未来如何，犹未可知， </p>
+  </div>
+  <!--content结束-->
+  <div class="zhengce" >
+    <div class="zhengceshuoming">
+      <p >网约车平台公司、驾驶员、车辆许可条件 </p>
+      <p >网约车平台公司 </p>
+      <p >（一）具有企业法人资格，并在本市依法纳税； </p>
+      <p >（二）具备开展网约车平台服务的线上能力； </p>
+      <p >（三）在本市设立服务机构，并拥有保障服务的办公场所、培训教育场所、工程技术人员和企业管理人员； </p>
+      <p >（四）具有经营管理、安全生产管理、服务质量保障制度，包括网络安全管理、驾驶员培训教育、考核奖惩、车辆检测维护、网约车服务评价和乘客投诉处理等制度和网络安全保护技术措施； </p>
+      <p >（五）使用电子支付的，应当提供与银行、非银行支付机构签订支付结算服务的协议； </p>
+      <p >（六）法律法规规章规定的其他条件。 </p>
+      <p >外商投资网约车经营的，除符合上述条件外，还应当符合外商投资相关法律法规的规定。 </p>
+      <p >驾驶员需北京市户籍 </p>
+      <p >（一）本市户籍； </p>
+      <p >（二）取得本市核发的相应准驾车型机动车驾驶证并具有3年以上驾驶经历； </p>
+      <p >（三）男年龄在60岁、女年龄在55岁以下，身体健康； </p>
+      <p >（四）无交通肇事犯罪、危险驾驶犯罪、暴力犯罪记录，无吸毒行为和记录，无饮酒后驾驶记录，最近连续3个记分周期内没有记满12分记录； </p>
+      <p >（五）经指定考试机构考试合格； </p>
+      <p >（六）自申请之日前一年内无驾驶机动车发生5次以上道路交通安全违法行为； </p>
+      <p >从事过巡游车服务的，在从事巡游车服务期间，未被列入严重违法信息库； </p>
+      <p >（七）法律法规规章规定的其他条件。 </p>
+      <p >车辆需不小于2.0L或1.8T </p>
+      <p >（一）本市号牌车辆，满足本市公布实施的最新机动车排放标准，在车辆检验有效期内，没有未处理完毕的交通事故和交通违法记录； </p>
+      <p >（二）5座三厢小客车排气量不小于2.0L或1.8T、车辆轴距不小于2700毫米；新能源车轴距不小于2650毫米；7座乘用车排气量不小于2.0L、轴距不小于3000毫米、车长大于5100毫米； </p>
+      <p >（三）车辆安装符合国家和本市相关规定的具有行驶记录功能的车辆卫星定位装置、应急报警装置，车辆技术性能符合运营安全相关标准要求； </p>
+      <p >（四）车辆需配备具有网约车服务平台服务端、价格计算、在线支付、服务评价等功能的终端设备； </p>
+      <p >（五）车辆所有人同意车辆使用性质登记为&#8220;预约出租客运&#8221;； </p>
+      <p >（六）车辆属于个人所有的，车辆所有人名下应当没有登记的其他巡游车和网约车，本人应当取得《网络预约出租汽车驾驶员证》，并预先协议接入取得经营许可的网约车平台； </p>
+      <p >（七）法律法规规章规定的其他条件。 </p>
+    </div>
+    <!--zhengceshuoming结束--> 
+  </div>
+  <!--zhegnce结束-->
+  <div class="lightbox" >
+    <div id="lightbox_1"> <img src="image/part3 (6).jpg" alt="#" class="lightbox-pic"
+   data-role="lightbox"
+      data-source="image/part3 (6).jpg"
+      data-group="group-1"
+      data-id="pic_1_1"
+      data-caption="pic_1_1"> <img src="image/part3 (5).jpg" alt="#" class="lightbox-pic" data-role="lightbox" data-source="image/part3 (5).jpg" data-group="group-1" data-id="pic_1_2" data-caption="pic_1_2"> <img src="image/part3 (1).jpg" alt="#" class="lightbox-pic" data-role="lightbox" data-source="image/part3 (1).jpg" data-group="group-1" data-id="pic_1_3" data-caption="pic_1_3"> <img src="image/part3 (4).jpg" alt="#" class="lightbox-pic" data-role="lightbox" data-source="image/part3 (4).jpg" data-group="group-1" data-id="pic_1_4" data-caption="pic_1_4"> </div>
+    <!--lightbox_1结束-->
+    
+    <div id="lightbox_mask"></div>
+    <div id="lightbox_popup">
+      <div class="pic-view"> <img src="image/part3 (5).jpg" alt="#" class="pic"> </div>
+      <div class="btn-view"> <a  class="btn btn-prev">←</a> <a class="btn btn-next">→</a> <a  class="btn btn-close">×</a> </div>
+      <div class="caption-view">
+        <p>pic1</p>
+      </div>
+    </div>
+  </div>
+  <div class="part3vid" data-aos="fade-up">
+    <video controls="controls" src="video/part3.mp4" width="500" height="400" style="float:right; margin-bottom:140px "></video>
+  </div>
+  <!--part2vid结束--><!--lightbox结束--> 
+</div>
+<!--part结束-->
+<div id="top" >
+  <video id="videoend">
+    <source src="video/final.mp4" type="video/mp4" >
+  </video>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/smoothnav.js"></script> 
+<script type="text/javascript" src="js/aos.js"></script> 
+<script>
+    AOS.init();
+</script> 
+<script>
+$(document).ready(function() {
+	$("#caption").addClass("caption-ani");
+	$("#line").addClass("line-ani");
+})
+
+</script> 
+<script type="text/javascript" src="js/skippr.js"></script> 
+<script type="text/javascript" src="js/smoothnav.js"></script> 
+<script type="text/javascript" src="js/jquery.fancybox.js"></script> 
+<script>
+$(document).ready(function(){
+    $("#theTarget").skippr({
+	navType: 'bubble',
+	autoPlay: true,
+    autoPlayDuration: 2000,
+	});
+
+});
+</script> 
+<script type="text/javascript" src="js/fullscreen.js"></script> 
+<script src="js/easing.js" type="text/javascript"></script> 
+<script src="js/timers.js" type="text/javascript"></script> 
+<script src="js/dualSlider.js" type="text/javascript"></script> 
+<script>
+	jQuery(document).ready(function ($) {
+	    $('ul.cards').on('click', function () {
+	        $(this).toggleClass('transition');
+	    });
+	    $('ul.card-stacks').on('click', function () {
+	        $(this).toggleClass('transition');
+	    });
+	    $('ul.cards-split').on('click', function () {
+	        $(this).toggleClass('transition');
+	    });
+	    $('ul.cards-split-delay').on('click', function () {
+	        $(this).toggleClass('transition');
+	    });
+	});
+
+	</script> 
+<script type="text/javascript" src="js/fullscreen.js"></script> 
+<script src="js/easing.js" type="text/javascript"></script> 
+<script src="js/timers.js" type="text/javascript"></script> 
+<script src="js/dualSlider.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/echarts.js"></script> 
+<script>
+ var myChart = echarts.init(document.getElementById('chart'));
+var option ={
+    title: {
+        text: "2016年滴滴车司机平均收入",
+        x: "center"
+    },
+    tooltip: {
+        trigger: "item",
+        formatter: "{a} <br>{b} : {c} ({d}%)",
+        textStyle: {
+            fontSize: 12
+        },
+        padding: 5
+    },
+    legend: {
+        x: "center",
+        y: "bottom",
+        data: ["8000-10000", "7000-8000", "6000-7000", "5000-6000", "4000-5000"]
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            mark: {
+                show: true
+            },
+            dataView: {
+                show: true,
+                readOnly: true
+            },
+            restore: {
+                show: true
+            },
+            saveAsImage: {
+                show: true
+            }
+        }
+    },
+    calculable: true,
+    series: [
+        {
+            name: "收入占比",
+            type: "pie",
+            radius: [30, 90],
+            center: ["50%", "50%"],
+            roseType: "area",
+            data: [
+                {
+                    value: 5,
+                    name: "8000-10000"
+                },
+                {
+                    value: 16,
+                    name: "7000-8000"
+                },
+                {
+                    value: 42,
+                    name: "6000-7000"
+                },
+                {
+                    value: 23.4,
+                    name: "5000-6000"
+                },
+                {
+                    value: 13.6,
+                    name: "4000-5000"
+                }
+            ],
+            startAngle: 90,
+            selectedMode: "multiple"
+        }
+    ],
+    color: ["rgb(160, 24, 44)", "rgb(76, 76, 76)", "rgb(170, 70, 80)", "rgb(153, 153, 153)", "rgb(229, 229, 229)", "#ff69b4", "#ba55d3", "#cd5c5c", "#ffa500", "#40e0d0", "#1e90ff", "#ff6347", "#7b68ee", "#00fa9a", "#ffd700", "#6699FF", "#ff6666", "#3cb371", "#b8860b", "#30e0e0"]
+}
+myChart.setOption(option);
+
+</script> 
+<script src="js/lightbox.js"></script> 
+<script>
+    $(function () {
+
+      $('#lightbox_1').lightbox({
+        ifChange: true
+      });
+
+      $('#lightbox_2').lightbox();
+
+    });
+  </script>
+</body>
+</html>
